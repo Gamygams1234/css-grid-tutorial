@@ -14,10 +14,14 @@
         /* this defines our grid, but we still need our columns  */
         display: grid;
         grid-template-columns: repeat(3, 1fr); /*setting the column lines */
+        grid-auto-rows: minmax(150px, auto);
 
         grid-gap: 10px;
         max-width: 960px;
         margin: 0px auto;
+        /* align-items: start; this will bring our items at the start or the end. Now the item will only take up the content, The default is stretch */
+        /* justify-items: end; justify wil do side to side. we can do end, start, or center */
+        /* justify-items: start; */
       }
       #content div {
         background: #3bbced;
@@ -27,30 +31,23 @@
       #content div:nth-child(even) {
         background: #777;
       }
-      .nested {
-        display: grid; /*We start by setting the grid and then we can add whatever styles we want*/
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 10px;
-        grid-column: span 3; /*We can also use the span keyword to have it span 3 columms regardless where it starts*/
+      .one {
+        /* we can do it for each property by doing this */
+        align-self: end;
+        justify-self: end;
       }
-      .nested p {
-        border: 1px solid #fff;
-        padding: 20px;
-        margin: 0;
+      .two {
+        align-self: center;
+        justify-self: center;
       }
     </style>
   </head>
   <body>
     <div id="content">
-      <div class="one">1</div>
+      <div class="one">Alot more content in here</div>
       <div class="two">2</div>
       <div class="three">3</div>
-      <div class="nested">
-        <p>1</p>
-        <p>2</p>
-        <p>3</p>
-        <p>4</p>
-      </div>
+      <div class="four">4</div>
       <div class="five">5</div>
       <div class="six">6</div>
     </div>
