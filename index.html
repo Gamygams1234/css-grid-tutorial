@@ -13,13 +13,17 @@
       #content {
         /* this defines our grid, but we still need our columns  */
         display: grid;
-
-        /* grid-template-columns: 30% 20% 50%;  this can make our columns but we can make it with fractions and we can set it to whatever we wang */
-        /* grid-template-columns: 1fr 1fr 1fr;  this can be if we want to do fractions*/
         grid-template-columns: repeat(3, 1fr); /*Or we can use a repeat with the first agumet being how many times and the second being what fraction*/
+        /*   grid-auto-rows: 200px; this will automathically set the height of the rows regardless of content*/
+        /*grid-auto-rows: minmax(200px, auto); This will check the minimum and will let the maximum fit the content*/
+        grid-template-rows: 200px 300px 200px 200px; /*This is how we can set the rows, we only have three rows, but we have space for a fourth*/
+        /*we can also use repeat*/
 
+        /* then to set the gap we can use these properties */
+        /* grid-row-gap: 20px; */
+        /* grid-column-gap: 20px; */
+        grid-gap: 30px;
         max-width: 960px;
-        /* this will put our content in the center */
         margin: 0px auto;
       }
       #content div {
