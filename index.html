@@ -13,43 +13,48 @@
       #content {
         /* this defines our grid, but we still need our columns  */
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /*setting the column lines */
-        grid-auto-rows: minmax(150px, auto);
-
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: minmax(100px, auto);
         grid-gap: 10px;
         max-width: 960px;
         margin: 0px auto;
-        /* align-items: start; this will bring our items at the start or the end. Now the item will only take up the content, The default is stretch */
-        /* justify-items: end; justify wil do side to side. we can do end, start, or center */
-        /* justify-items: start; */
+        position: relative;
       }
-      #content div {
+      #content > * {
         background: #3bbced;
         padding: 30px;
       }
-
-      #content div:nth-child(even) {
-        background: #777;
+      header {
+        grid-column: span 12;
       }
-      .one {
-        /* we can do it for each property by doing this */
-        align-self: end;
-        justify-self: end;
+      main {
+        grid-column: 4/13;
+        grid-row: 2/4;
       }
-      .two {
-        align-self: center;
-        justify-self: center;
+      aside {
+        grid-column: 1/4;
+      }
+      section {
+        grid-column: 1/13;
+        grid-row: 4/6;
+      }
+      footer {
+        grid-column: 1/13;
+        grid-row: 6/7;
+      }
+      nav {
+        grid-column: 1/4;
       }
     </style>
   </head>
   <body>
     <div id="content">
-      <div class="one">Alot more content in here</div>
-      <div class="two">2</div>
-      <div class="three">3</div>
-      <div class="four">4</div>
-      <div class="five">5</div>
-      <div class="six">6</div>
+      <header>header</header>
+      <main>main</main>
+      <section>section</section>
+      <aside>aside</aside>
+      <nav>nav</nav>
+      <footer>footer</footer>
     </div>
   </body>
 </html>
